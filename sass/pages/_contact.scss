@@ -1,0 +1,91 @@
+.contct-form {
+	background: $px-white;
+	box-shadow: $px-shadow;
+	padding: 35px;
+	@include down-sm {
+		padding: 25px;
+	}
+	.form-group {
+		margin-bottom: 30px;
+		position: relative;
+		.form-label {
+			position: absolute;
+			top: 10px;
+			margin: 0;
+			left: 2px;
+			font-weight: 400;
+			font-size: 14px;
+			color: $px-dark;
+			padding: 0 10px;
+			pointer-events: none;
+			@include transition(ease all 0.35s);
+			background: $px-white;
+		}
+		.form-control {
+			border-radius: 0;
+			border: 1px solid rgba($px-dark, 0.5);
+			height: 40px;
+			box-shadow: none !important;
+			font-size: 15px;
+			color: $px-dark;
+			&:focus {
+				border-color: $px-theme !important;
+			}
+			&::-webkit-input-placeholder {
+			  color: transparent;
+			}
+
+			&:-ms-input-placeholder {
+			  color: transparent;
+			}
+
+			&::-ms-input-placeholder {
+			  color: transparent;
+			}
+
+			&::-moz-placeholder {
+			  color: transparent;
+			}
+
+			&::placeholder {
+			  color: transparent;
+			}
+			&:not(:placeholder-shown) {
+				~ .form-label {
+					top: -10px;
+					font-size: 9px;
+					border-radius: 30px;
+					border: 1px solid rgba($px-dark, 0.5);
+					left: 10px;
+				}
+			}
+		}
+		textarea.form-control {
+			height: inherit;
+		}
+	}
+}
+
+.contact-info {
+
+	.media {
+		.icon {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			background: rgba($px-theme, 0.1);
+			color: $px-theme;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 24px;
+		}
+		.media-body {
+			padding-left: 15px;
+			color: $px-dark;
+		}
+		+ .media {
+			margin-top: 20px;
+		}
+	}
+}

@@ -1,0 +1,48 @@
+.px-btn{
+	padding: 0 25px;
+	line-height: 46px;
+	position: relative;
+	display: inline-block;
+	background: none;
+	border: none;
+	font-size: 16px;
+	font-weight: 600;
+	text-decoration: none !important;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	box-shadow: $px-shadow;
+	&.px-btn-theme {
+		background: $px-theme;
+		color: $px-white;
+		&:after {
+			content:"";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: auto;
+			top: 0;
+			width: 0px;
+			@include transition(ease all 0.35s);
+			background: $px-dark;
+			z-index: -1;
+		}
+		&:hover {
+			color: $px-white;
+			&:after {
+				width: 100%;
+				left: auto;
+				right: 0;
+			}
+		}
+	}
+	&.px-btn-white {
+		background: $px-white;
+		border-color: $px-white;
+		color: $px-dark;
+		&:hover {
+			background: transparent;
+			color: $px-white;
+		}
+	}
+}

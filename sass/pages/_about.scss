@@ -1,0 +1,45 @@
+.about-section {
+	.container {
+		position: relative;
+		z-index: 1;
+	}
+	.img-box {
+		position: relative;
+		box-shadow: $px-shadow;
+		background: $px-white;
+		padding: 10px;
+		img {
+			position: relative;
+		}
+	}
+	.typo-box {
+		padding-left: 40px;
+		@include down-md {
+			padding-top: 15px; 
+			padding-left: 0px;
+		}
+		h3 {
+			font-size: 40px;
+			font-weight: 700;
+			color: $px-dark; 
+			@include down-sm {
+				font-size: 30px;
+			}
+		}
+		h5 {
+			font-size: 18px;
+			font-weight: 600;
+			color: $px-dark; 
+			margin-bottom: 15px;
+		}
+		.lead {
+			font-weight: normal;
+			@include down-sm {
+				font-size: 17px;
+			}
+		}
+		.btn-bar {
+			padding-top: 12px;
+		}
+	}
+}

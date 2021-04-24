@@ -1,0 +1,25 @@
+$px-theme:			#dc965a !default;
+$px-dark:			#0f0a0a !default;
+
+$px-white:			#fff !default;
+$px-black:			#000 !default;
+
+$px-gray:			#fff5ec !default;
+
+$px-body:			#5e6472 !default;
+$px-font-size:		16px !default;
+$px-line-height:	1.7 !default;
+$px-font:			'Nunito', monospac !default;
+$px-font-alt:		'Nunito', serif !default;
+
+$px-shadow:			rgba(0, 0, 0, 0.25) 0px 25px 50px -12px !default;
+$px-shadow-sm:			rgba(0, 0, 0, 0.25) 0px 7px 20px -22px !default;
+
+
+// Breakpoints
+$px-media-xsm:		567px !default;
+$px-media-sm:		767px !default;
+$px-media-md:		991px !default;
+$px-media-lg:		1200px !default;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');

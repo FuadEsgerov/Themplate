@@ -1,0 +1,44 @@
+@import 'shared/variables';
+@import 'shared/mixins';
+@import 'shared/buttons';
+@import 'layout/section';
+@import 'layout/footer';
+@import 'layout/header';
+@import 'pages/home';
+@import 'pages/about';
+@import 'pages/service';
+@import 'pages/ourskill';
+@import 'pages/testimonial';
+@import 'pages/portfolio';
+
+* {
+	outline: none !important;
+}
+html {
+	overflow-x: hidden;
+}
+
+body {
+	color: $px-body;
+	font-family: $px-font;
+	line-height: $px-line-height;
+	font-size: $px-font-size;
+	font-weight: 400;
+	overflow-x: hidden;
+}
+
+.font-alt {
+	font-family: $px-font-alt;
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	color: $px-theme;
+	@include px-hover {
+		color: darken($px-theme, 8%);
+		text-decoration: none;
+	}
+}

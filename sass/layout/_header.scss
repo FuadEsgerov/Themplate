@@ -1,0 +1,140 @@
+.navbar-toggler,
+.toggler-menu {
+	width: 40px;
+    height: 40px;
+    position: relative;
+    margin: 0 20px 0 0;
+    border-radius: 0;
+    padding: 0;
+    margin-left: 15px;
+	background: $px-theme;
+	border: none;
+	span {
+		position: absolute;
+	    top: 0;
+	    left: 0;
+	    bottom: 0;
+	    right: 0;
+	    width: 25px;
+	    height: 2px;
+	    margin: auto;
+	    box-shadow: 0px -8px 0 0px currentColor, 0px 8px 0 0px currentColor;
+		background: $px-white;
+		color: $px-white;
+	}
+}
+
+@include up-md {
+	.main-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 111;
+		width: 100%;
+		top: 0;
+		border-bottom: 1px solid rgba($px-white, 0.2);
+		.fixed-header & {
+			box-shadow: $px-shadow-sm;
+			background: $px-white;
+		}
+		.navbar {
+			padding: 0;
+		}
+		.navbar-brand {
+			color: $px-white;
+			font-weight: 700;
+			font-size: 28px;
+			line-height: 1;
+			.fixed-header & {
+				color: $px-dark;
+			}
+		}
+		.navbar-nav {
+			> li {
+				border-right: 1px solid rgba($px-white, 0.2);
+				padding: 0 20px;
+				.fixed-header & {
+					border-right: 1px solid rgba($px-dark, 0.1);
+				}
+				&:first-child {
+					border-left: 1px solid rgba($px-white, 0.2);
+					.fixed-header & {
+						border-left: 1px solid rgba($px-dark, 0.1);
+					}
+				}
+				> a {
+					padding: 0 10px;
+					line-height: 70px;
+					color: rgba($px-white, 0.6);
+					font-weight: 700;
+					text-transform: uppercase;
+					font-size: 14px;
+					letter-spacing: 0.05rem;
+					&.active {
+						color: $px-white;
+					}
+					.fixed-header & {
+						color: $px-dark;
+						&.active {
+							color: $px-theme;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+
+/* Mobile 
+-----------------------------*/
+@include down-md {
+	.main-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 111;
+		width: 100%;
+		top: 0;
+		border-bottom: 1px solid rgba($px-white, 0.2);
+		box-shadow: $px-shadow-sm;
+		.container {
+			max-width: 100%;
+			padding: 0;
+		}
+		.fixed-header & {
+			background: $px-white;
+		}
+		.navbar {
+			padding: 0;
+		}
+		.navbar-brand {
+			color: $px-white;
+			font-weight: 700;
+			font-size: 28px;
+			line-height: 1;
+			margin: 15px 20px;
+			.fixed-header & {
+				color: $px-dark;
+			}
+		}
+		.navbar-nav {
+			background: $px-white;
+			> li {
+				border-top: 1px solid rgba($px-dark, 0.1);
+				> a {
+					padding: 12px 20px;
+					font-weight: 700;
+					text-transform: uppercase;
+					font-size: 14px;
+					letter-spacing: 0.05rem;
+					color: $px-dark;
+					&.active {
+						color: $px-theme;
+					}
+				}
+			}
+		}
+	}
+}

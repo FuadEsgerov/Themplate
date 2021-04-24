@@ -1,0 +1,116 @@
+.portfolio-filter-01 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    .filter {
+        li {
+            cursor: pointer;
+            margin: 0 15px;
+            color: $px-dark;
+            position: relative;
+            padding: 5px 0;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: normal;
+            @include down-sm {
+                margin: 0 8px;
+                font-size: 15px;
+            }
+            &:after {
+                content: "";
+                width: 0px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                height: 2px;
+                background: $px-theme;
+                position: absolute;
+                @include transition(ease all 0.55s);
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+
+            &.active {
+                &:after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+.portfolio-box-01 {
+    background: $px-white;
+    padding: 20px;
+    box-shadow: $px-shadow;
+    margin: 15px 0;
+    position: relative;
+    &:after {
+        content:"";
+        position: absolute;
+        bottom: 0;
+        top: auto;
+        left: 0;
+        right: 0;
+        height: 0;
+        width: 100%;
+        @include transition(ease all 0.35s);
+        background: $px-theme;
+        opacity: 0.8;
+    }
+    .portfolio-info {
+        padding-bottom: 20px;
+        h5 {
+            font-weight: 600;
+            color: $px-dark;
+            margin: 0;
+        }
+    }
+    .portfolio-icon {
+        position: absolute;
+        bottom: 18px;
+        left: 8px;
+        @include transition(ease all 0.35s);
+        opacity: 0;
+        .gallery-link {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            vertical-align: top;
+            line-height: 50px;
+            background: $px-white;
+            text-align: center;
+            color: $px-theme;
+        }
+    }
+    &:hover {
+        &:after {
+            bottom: auto;
+            top: 0;
+            height: 100%;
+        }
+        .portfolio-info {
+            position: relative;
+            z-index: 1;
+            h5 {
+                color: $px-white;
+            }
+            span {
+                color: rgba($px-white, 0.5);
+            }
+        }
+        .portfolio-icon {
+            bottom: 8px;
+            opacity: 1;
+            z-index: 1;
+        }
+    }
+}
