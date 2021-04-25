@@ -10,6 +10,7 @@ window.addEventListener("scroll", function () {
     body.classList.remove("fixed-header");
   }
 });
+
 /* ---------------------------------------------- /*
    * TypeIT
   /* ---------------------------------------------- */
@@ -63,6 +64,7 @@ $(portfolioWork).isotope({
       portfolioWork.isotope({ filter: filterValue });
     });
     $(portfolioFilter).on( 'click', function() {
+      console.log('hello')
       $(this).addClass('active').siblings().removeClass('active');
     });
 /* ---------------------------------------------- /*
@@ -79,22 +81,20 @@ $(".lightbox-gallery").magnificPopup({
   gallery: {
     enabled: true,
     navigateByImgClick: true,
-    preload: [0, 1], // Will preload 0 - before current, and 1 after NAY current image
+    preload: [0, 1], 
   },
 });
-  /*--------------------
-        * One Page
-    ----------------------*/
-
-$('.header-nav a[href*="#"]:not([href="#"])').on('click', function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') || location.hostname == this.hostname) {
-      var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            $('html,body').animate({
-              scrollTop: target.offset().top - 60,
-              }, 1000);
-              return false;
-          }
-    }
-});
+  // Window on Resize
+  $(window).on("resize", function(){
+  });
+/* ---------------------------------------------- /*
+   * ScrollSpy
+/* ---------------------------------------------- */
+  var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+    target: '#navbar-example'
+  })
+  var dataSpyList = [].slice.call(document.querySelectorAll('[data-bs-spy="scroll"]'))
+dataSpyList.forEach(function (dataSpyEl) {
+  bootstrap.ScrollSpy.getInstance(dataSpyEl)
+    .refresh()
+})
