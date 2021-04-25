@@ -1,3 +1,4 @@
+document.getElementById("loading").style.display = "none";
 /* ---------------------------------------------- /*
    * header fixed
   /* ---------------------------------------------- */

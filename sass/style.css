@@ -25,6 +25,71 @@
   max-width: 100%;
 }
 
+/* ----------------------
+*	Loading
+---------------------------*/
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #dc965a;
+  z-index: 99999;
+}
+
+.load-circle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+}
+
+.load-circle span {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+}
+
+.load-circle span:after {
+  content: " ";
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  -webkit-animation: lds-dual-ring 1.2s linear infinite;
+          animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@-webkit-keyframes lds-dual-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .px-btn {
   padding: 0 25px;
   line-height: 46px;
