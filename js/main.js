@@ -52,22 +52,22 @@ $(document).ready(function () {
 /* ---------------------------------------------- /*
    * Isotype
 /* ---------------------------------------------- */
-var portfolioWork = $('.portfolio-content');
+var portfolioWork = $(".portfolio-content");
 $(portfolioWork).isotope({
-    resizable: false,
-    itemSelector: '.grid-item',
-    layoutMode: 'masonry',
-    filter: '*'
-  });
-    var portfolioFilter = $('.filter li');
-    $(portfolioFilter).on( 'click', function() {
-      var filterValue = $(this).attr('data-filter');
-      portfolioWork.isotope({ filter: filterValue });
-    });
-    $(portfolioFilter).on( 'click', function() {
-      console.log('hello')
-      $(this).addClass('active').siblings().removeClass('active');
-    });
+  resizable: false,
+  itemSelector: ".grid-item",
+  layoutMode: "masonry",
+  filter: "*",
+});
+var portfolioFilter = $(".filter li");
+$(portfolioFilter).on("click", function () {
+  var filterValue = $(this).attr("data-filter");
+  portfolioWork.isotope({ filter: filterValue });
+});
+$(portfolioFilter).on("click", function () {
+  console.log("hello");
+  $(this).addClass("active").siblings().removeClass("active");
+});
 /* ---------------------------------------------- /*
    * MagnificPopup
 /* ---------------------------------------------- */
@@ -82,20 +82,45 @@ $(".lightbox-gallery").magnificPopup({
   gallery: {
     enabled: true,
     navigateByImgClick: true,
-    preload: [0, 1], 
+    preload: [0, 1],
   },
 });
-  // Window on Resize
-  $(window).on("resize", function(){
-  });
+// Window on Resize
+$(window).on("resize", function () {});
 /* ---------------------------------------------- /*
    * ScrollSpy
 /* ---------------------------------------------- */
-  var scrollSpy = new bootstrap.ScrollSpy(document.body, {
-    target: '#navbar-example'
-  })
-  var dataSpyList = [].slice.call(document.querySelectorAll('[data-bs-spy="scroll"]'))
+var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+  target: ".check",
+});
+var dataSpyList = [].slice.call(
+  document.querySelectorAll('[data-bs-spy="scroll"]')
+);
 dataSpyList.forEach(function (dataSpyEl) {
-  bootstrap.ScrollSpy.getInstance(dataSpyEl)
-    .refresh()
-})
+  bootstrap.ScrollSpy.getInstance(dataSpyEl).refresh();
+});
+
+/*--------------------
+        * One Page
+    ----------------------*/
+$(function () {
+  $('a[href*="#"]:not([href="#"])').click(function () {
+    if (
+      location.pathname.replace(/^\//, "") ==
+        this.pathname.replace(/^\//, "") &&
+      location.hostname == this.hostname
+    ) {
+      var target = $(this.hash);
+      target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
+      if (target.length) {
+        $("html, body").animate(
+          {
+            scrollTop: target.offset().top,
+          },
+          350
+        );
+        return false;
+      }
+    }
+  });
+});
