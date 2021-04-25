@@ -2,7 +2,6 @@
 @import 'shared/mixins';
 @import 'shared/buttons';
 @import 'layout/header';
-@import 'layout/section';
 @import 'layout/footer';
 @import 'pages/home';
 @import 'pages/about';
@@ -10,6 +9,7 @@
 @import 'pages/ourskill';
 @import 'pages/testimonial';
 @import 'pages/portfolio';
+@import 'layout/section';
 
 * {
 	outline: none !important;

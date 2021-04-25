@@ -1,36 +1,8 @@
-.section {
-    padding: 100px 0;
-    position: relative;
-}
+
 .gray-bg {
     background: #fff5ec;
 }
-.section-title {
-    padding-bottom: 40px;
-    h3 {
-        font-size: 45px;
-        color: #0f0a0a;
-        font-weight: 800;
-        position: relative;
-        margin: 0 0 15px;
-        padding: 0 0 15px;
-        &:after {
-            content: "";
-            position: absolute;
-            width: 40px;
-            height: 3px;
-            background: #dc965a;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin: auto;
-        }
-    }
-    p {
-        margin: 0;
-        font-size: 17px;
-    }
-}
+
 .feature-box-01 {
 	background: $px-white;
 	box-shadow: $px-shadow;
